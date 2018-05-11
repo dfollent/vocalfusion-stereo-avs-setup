@@ -60,7 +60,7 @@ If you see a `400 Bad Request - HTTP` error it may be necessary to add http:// U
 7. Enter `sudo reboot` to reboot the Raspberry Pi and complete the audio setup.
 
 The following commands will be available to run from a terminal:
-    * `avsrun` to run the Sample App.
-    * `avsauth` to re-enter your Alexa device details.
-    * `avsunit` to run the unit tests.
-    * `avsintegration` to run the integration tests.
+- `avsrun` to run the Sample App.
+- `avsauth` to re-enter your Alexa device details.
+- `avsunit` to run the unit tests.
+- `avsintegration` to run the integration tests.
