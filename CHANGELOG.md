@@ -1,5 +1,9 @@
 # VocalFusion Raspberry Pi Setup Change Log
 
+## 1.2.0
+
+  * Using vocalfusion-rpi-setup v1.1. 
+
 ## 1.1.0
 
   * Using vocalfusion-rpi-setup v1.0.
