@@ -5,6 +5,7 @@ RPI_SETUP_DIR=$SETUP_DIR/vocalfusion-rpi-setup
 
 RPI_SETUP_TAG="v1.1"
 AVS_DEVICE_SDK_TAG="xmos_v1.6"
+AVS_SCRIPT="setup.sh"
 
 if [ ! -d $RPI_SETUP_DIR ]; then
   git clone -b $RPI_SETUP_TAG git://github.com/xmos/vocalfusion-rpi-setup.git
@@ -27,8 +28,9 @@ echo "Installing VocalFusion Raspberry Pi Setup..."
 $RPI_SETUP_DIR/setup.sh
 
 echo "Installing Amazon AVS SDK..."
-wget -0 https://raw.githubusercontent.com/xmos/avs-device-sdk/$AVS_DEVICE_SDK_TAG/tools/Install/setup.sh
-./setup.sh
+wget -O $AVS_SCRIPT https://raw.githubusercontent.com/xmos/avs-device-sdk/$AVS_DEVICE_SDK_TAG/tools/Install/$AVS_SCRIPT
+chmod +x $AVS_SCRIPT
+./$AVS_SCRIPT
 
 echo "Type 'sudo reboot' below to reboot the Raspberry Pi and complete the AVS setup."
 
