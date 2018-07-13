@@ -7,6 +7,19 @@ RPI_SETUP_TAG="v1.2"
 AVS_DEVICE_SDK_TAG="xmos_v1.6"
 AVS_SCRIPT="setup.sh"
 
+
+SDK_DIR=$HOME/sdk-folder
+if [ -d $SDK_DIR ]; then
+  if [ -d $SDK_DIR/avs-device-sdk ] && [ $(git -C $SDK_DIR/avs-device-sdk rev-parse --abbrev-ref HEAD) = $AVS_DEVICE_SDK_TAG ]; then
+    # SDK build folder is aligned with latest Amazon changes
+  else
+    echo "Error: $SDK_DIR is out of date. Please delete directory and then rerun."
+    echo "Exiting install script."
+    popd > /dev/null
+    return
+  fi
+fi
+
 if [ ! -d $RPI_SETUP_DIR ]; then
   git clone -b $RPI_SETUP_TAG git://github.com/xmos/vocalfusion-rpi-setup.git
 else
