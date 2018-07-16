@@ -7,7 +7,7 @@ RPI_SETUP_TAG="v1.2"
 AVS_DEVICE_SDK_TAG="xmos_v1.6"
 AVS_SCRIPT="setup.sh"
 
-
+# Amazon have changed the SDK directory structure. Prior versions will need to delete the directory before updating.
 SDK_DIR=$HOME/sdk-folder
 if [ -d $SDK_DIR ]; then
   if [ -d $SDK_DIR/avs-device-sdk ] && [ $(git -C $SDK_DIR/avs-device-sdk rev-parse --abbrev-ref HEAD) = $AVS_DEVICE_SDK_TAG ]; then
@@ -38,8 +38,8 @@ else
 fi
 
 # Execute (rather than source) the setup scripts
-echo "Installing VocalFusion Raspberry Pi Setup..."
-$RPI_SETUP_DIR/setup.sh vocalfusion
+echo "Installing VocalFusion Stereo Raspberry Pi Setup..."
+$RPI_SETUP_DIR/setup.sh
 
 echo "Installing Amazon AVS SDK..."
 wget -O $AVS_SCRIPT https://raw.githubusercontent.com/xmos/avs-device-sdk/$AVS_DEVICE_SDK_TAG/tools/Install/$AVS_SCRIPT

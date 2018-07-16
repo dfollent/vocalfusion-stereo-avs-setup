@@ -55,6 +55,6 @@ If you see a `400 Bad Request - HTTP` error it may be necessary to add http:// U
 ## Running the AVS SDK Sample App
 The following commands will be available to run from a terminal:
 - `avsrun` to run the Sample App.
-- `avsauth` to re-authorise your Alexa device details.
+- `avsauth` to re-authenticate your Alexa device details.
 - `avsunit` to run the unit tests.
 - `avssetup` to re-install the Sample App.
